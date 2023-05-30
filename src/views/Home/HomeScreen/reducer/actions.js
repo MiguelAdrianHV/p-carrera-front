@@ -1,0 +1,4 @@
+export const actions = {
+  SET_SELECTED_USER: "SET_SELECTED_USER",
+  SET_USER_DATA_SOCKET: "SET_USER_DATA_SOCKET",
+};
