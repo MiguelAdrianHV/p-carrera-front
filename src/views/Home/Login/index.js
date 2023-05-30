@@ -44,9 +44,7 @@ export default function LoginScreen() {
   }, [state.login.success, navigate]);
   return (
     <div className="login__screen">
-      <div className="login__screen__left"></div>
-      <div className="login__screen__right">
-        <TextComponent
+      <TextComponent
           type="h2"
           text={{
             en: "Login",
@@ -98,7 +96,6 @@ export default function LoginScreen() {
             }}
           />
         </div>
-      </div>
     </div>
   );
 }

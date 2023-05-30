@@ -76,7 +76,6 @@ export default function RegisterScreen() {
   }, [state.register.success, navigate]);
   return (
     <div className="register__screen">
-      <div className="register__screen__left"></div>
       <div className="register__screen__right">
         <TextComponent
           text={{
