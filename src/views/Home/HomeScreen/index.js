@@ -12,18 +12,20 @@ export default function HomeScreen() {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const navigate = useNavigate();
 
-  function handleTestType() {
+  useEffect(() => {
     petition({
       url: `/user/tests/${userInfo.id}/kuder`,
       method: "GET",
       constants: {
-        REQUEST: actions.TEST_TYPE_REQUEST,
-        SUCCESS: actions.TEST_TYPE_SUCCESS,
-        FAILURE: actions.TEST_TYPE_FAILURE,
+        REQUEST: actions.USER_TEST_REQUEST,
+        SUCCESS: actions.USER_TEST_SUCCESS,
+        FAILURE: actions.USER_TEST_FAILURE,
       },
       dispatch: dispatch,
     });
-  }
+    console.log(state.userTest.data)
+  }, [userInfo.id]);
+
   return (
     <div>
       <div className="home__screen">
@@ -57,7 +59,7 @@ export default function HomeScreen() {
               className="home__screen--user-stats--user--image"
             />
             <h2 className="home__screen--user-stat">
-              ID: {userInfo.identifier_number}
+              Matricula: {userInfo.identifier_number}
             </h2>
             <h2 className="home__screen--user-stat">
               Nombre: {userInfo.first_name} {userInfo.last_name}
@@ -72,10 +74,7 @@ export default function HomeScreen() {
               Genero: {userInfo.gender}  
             </h2>
             <h2 className="home__screen--user-stat">
-              ID de sitio: {userInfo.id}  
-            </h2>
-            <h2 className="home__screen--user-stat">
-              Tipo de aptitud: {}  
+              Tipo de aptitud: {state.userTest.data?.message.result_pretty}
             </h2>
           </div>
         </div>

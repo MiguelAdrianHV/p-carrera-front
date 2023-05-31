@@ -75,14 +75,13 @@ export default function RegisterScreen() {
     }
   }, [state.register.success, navigate]);
   return (
-    <div className="register__screen">
       <div className="register__screen__right">
         <TextComponent
           text={{
             es: "Registro",
             en: "Register",
           }}
-          type="h2"
+          type="h1"
         />
         <Form onSubmit={(e) => e.preventDefault()} id="register__form">
           {state.inputFields
@@ -106,42 +105,22 @@ export default function RegisterScreen() {
           <div className="action__buttons">
             {/* Previous step */}
             {state.step > 1 && (
-              <Button
-                text={{
-                  es: "Anterior",
-                  en: "Previous",
-                }}
-                type="secondary"
-                onClick={handlePrevStep}
-                disabled={state.register.loading}
-                hidden={state.register.loading}
-              />
+              <button onClick={handlePrevStep}>
+                Anterior
+              </button>
             )}
             {/* Next step */}
             {state.step < state.totalSteps && (
-              <Button
-                text={{
-                  es: "Siguiente",
-                  en: "Next",
-                }}
-                type="secondary"
-                onClick={handleNextStep}
-                disabled={state.register.loading}
-                hidden={state.register.loading}
-              />
+              <button onClick={handleNextStep}>
+                Siguiente
+              </button>
             )}
 
             {/* Submit */}
             {state.step === state.totalSteps && (
-              <Button
-                text={{
-                  es: "Enviar",
-                  en: "Submit",
-                }}
-                type="primary"
-                onClick={handleSubmit}
-                loading={state.register.loading}
-              />
+              <button onClick={handleSubmit}>
+                Enviar
+              </button>
             )}
           </div>
         </Form>
@@ -164,6 +143,5 @@ export default function RegisterScreen() {
           />
         </div>
       </div>
-    </div>
   );
 }

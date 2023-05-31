@@ -43,14 +43,21 @@
     .home__screen--test-buttons
         display: flex
         flex-direction: column
-        align-items: center
         justify-content: center
-        height: 30rem
-        background-color: #f5f5f5
+        align-items: center
+        transition: all 0.3s ease-in-out
+        border: 1px solid #cfcfcf
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px
+        border-radius: 8px
+        padding: 2rem
+        width: 50%
+        height: 35rem
+        margin: 2rem auto
         .home__screen--test-buttons--row
             display: flex
             align-items: center
             justify-content: center
+            flex-wrap: wrap
             gap: 1rem
             .home__screen--test-buttons--column
                 display: flex
@@ -121,5 +128,6 @@
         top: 0
 
 @media screen and (max-width:$small)
-
+    .home__screen--test-button
+        width: 15rem
 @media screen and (max-width:$xs)

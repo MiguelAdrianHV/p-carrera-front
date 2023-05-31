@@ -13,6 +13,32 @@ const reducer = (state = initialState, action) => {
         ...state,
         userDataSocket: action.payload,
       };
+    case actions.USER_TEST_REQUEST:
+      return {
+        ...state,
+        userTest: {
+          ...state.userTest,
+          loading: true,
+        },
+      };
+    case actions.USER_TEST_SUCCESS:
+      return {
+        ...state,
+        userTest: {
+          ...state.userTest,
+          loading: false,
+          data: action.payload,
+        },
+      };
+    case actions.USER_TEST_FAILURE:
+      return {
+        ...state,
+        userTest: {
+          ...state.userTest,
+          loading: false,
+          error: action.payload,
+        },
+      };
     default:
       return state;
   }

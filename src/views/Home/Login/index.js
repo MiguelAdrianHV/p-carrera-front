@@ -45,7 +45,7 @@ export default function LoginScreen() {
   return (
     <div className="login__screen">
       <TextComponent
-          type="h2"
+          type="h1"
           text={{
             en: "Login",
             es: "Iniciar sesión",
@@ -67,17 +67,9 @@ export default function LoginScreen() {
               disabled={state.login.loading}
             />
           ))}
-          <Button
-            text={{
-              en: "Login",
-              es: "Iniciar sesión",
-            }}
-            modifiers={["small"]}
-            type="primary"
-            onClick={handleSubmit}
-            loading={state.login.loading}
-            disabled={state.login.loading}
-          />
+          <button  className="button-login" onClick={handleSubmit}>
+            Iniciar Sesion
+          </button>
         </Form>
         <div className="login__footer">
           <TextComponent

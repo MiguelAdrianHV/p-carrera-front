@@ -9,4 +9,9 @@ export const initialState = {
     receiveMessage: "receiveMessage",
   },
   userDataSocket: null,
+  userTest: {
+    loading: false,
+    error: null,
+    data: null,
+  },
 };

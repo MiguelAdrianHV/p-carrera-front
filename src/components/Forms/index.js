@@ -23,7 +23,7 @@ export const Form = styled.form`
     margin-top: 1rem;
   }
   label {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-family: ${primaryFont};
     margin-bottom: 1rem;
     color: ${(props) => props.theme.form.color};
@@ -49,7 +49,7 @@ export const Form = styled.form`
     border: 1px solid ${(props) => props.theme.form.borderColor};
     border-radius: 0.1rem;
     padding: 0.5rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: ${(props) => props.theme.form.color};
     accent-color: ${(props) => props.theme.form.accentColor};
     transition: all 0.3s ease-in-out;
