@@ -1,5 +1,5 @@
-import React from 'react'
-import './styles.sass'
+import React from "react";
+import "./styles.sass";
 
 export const Navbar = () => {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -16,10 +16,13 @@ export const Navbar = () => {
           alt="user"
           className="navbar__user--image"
         />
-        <span className="navbar__user--name">{userInfo.first_name} {userInfo.last_name}</span>
+        <span className="navbar__user--name">
+          {userInfo.first_name} {userInfo.last_name}
+        </span>
       </div>
-      <button className="navbar__logout" onClick={handleLogout}>Cerrar Sesion</button>
+      <button className="navbar__logout" onClick={handleLogout}>
+        Cerrar Sesión
+      </button>
     </div>
-
-  )
-}
+  );
+};

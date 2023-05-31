@@ -23,7 +23,7 @@ export default function HomeScreen() {
       },
       dispatch: dispatch,
     });
-    console.log(state.userTest.data)
+    console.log(state.userTest.data);
   }, [userInfo.id]);
 
   return (
@@ -33,7 +33,10 @@ export default function HomeScreen() {
         <div className="home__screen--test-buttons">
           <div className="home__screen--test-buttons--row">
             <div className="home__screen--test-buttons--column">
-              <button className="home__screen--test-button" onClick={() => navigate("/kuder")}>
+              <button
+                className="home__screen--test-button"
+                onClick={() => navigate("/kuder")}
+              >
                 Aptitudes
               </button>
               <button className="home__screen--test-button">
@@ -41,17 +44,15 @@ export default function HomeScreen() {
               </button>
             </div>
             <div className="home__screen--test-buttons--column">
-              <button className="home__screen--test-button">
-                Capacidad
-              </button>
-              <button className="home__screen--test-button">
-                Intereses
-              </button>
+              <button className="home__screen--test-button">Capacidad</button>
+              <button className="home__screen--test-button">Intereses</button>
             </div>
           </div>
         </div>
         <div className="home__screen--user-stats">
-          <h1 className="home__screen--user-stats--title">Informacion del usuario</h1>
+          <h1 className="home__screen--user-stats--title">
+            Información del usuario
+          </h1>
           <div className="home__screen--user-stats--user">
             <img
               src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
@@ -59,19 +60,15 @@ export default function HomeScreen() {
               className="home__screen--user-stats--user--image"
             />
             <h2 className="home__screen--user-stat">
-              Matricula: {userInfo.identifier_number}
+              Matrícula: {userInfo.identifier_number}
             </h2>
             <h2 className="home__screen--user-stat">
               Nombre: {userInfo.first_name} {userInfo.last_name}
             </h2>
+            <h2 className="home__screen--user-stat">Email: {userInfo.email}</h2>
+            <h2 className="home__screen--user-stat">Rol: {userInfo.role}</h2>
             <h2 className="home__screen--user-stat">
-              Email: {userInfo.email}
-            </h2>
-            <h2 className="home__screen--user-stat">
-              Rol: {userInfo.role}
-            </h2>
-            <h2 className="home__screen--user-stat">
-              Genero: {userInfo.gender}  
+              Género: {userInfo.gender}
             </h2>
             <h2 className="home__screen--user-stat">
               Tipo de aptitud: {state.userTest.data?.message.result_pretty}
