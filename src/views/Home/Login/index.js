@@ -47,7 +47,7 @@ export default function LoginScreen() {
       <TextComponent
           type="h1"
           text={{
-            en: "Login",
+            en: "Iniciar sesión",
             es: "Iniciar sesión",
           }}
         />
@@ -82,7 +82,7 @@ export default function LoginScreen() {
               ),
               en: (
                 <>
-                  Don't have an account? <a href="/register">Register</a>
+                  ¿Aún no tienes una cuenta? <a href="/register">Regístrate</a>
                 </>
               ),
             }}

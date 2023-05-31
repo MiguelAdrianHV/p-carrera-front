@@ -79,7 +79,7 @@ export default function RegisterScreen() {
         <TextComponent
           text={{
             es: "Registro",
-            en: "Register",
+            en: "Registro",
           }}
           type="h1"
         />
@@ -136,7 +136,7 @@ export default function RegisterScreen() {
               ),
               en: (
                 <>
-                  Already have an account? <a href="/login">Login</a>
+                  ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>{" "}
                 </>
               ),
             }}
