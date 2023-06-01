@@ -21,7 +21,7 @@ export default function HomeScreen() {
       },
       dispatch: dispatch,
     });
-  }, []);
+  }, [state.userTest.data?.tests]);
 
   return (
     <div>
