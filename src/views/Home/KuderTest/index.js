@@ -7,7 +7,7 @@ import { actions } from "./reducer/actions";
 import { Navbar } from "components";
 import { petition } from "api";
 import { useNavigate } from "react-router-dom";
-import "./styles.css";
+import "./styles.sass";
 
 export default function KuderTest() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -81,69 +81,72 @@ export default function KuderTest() {
   }
 
   if (state.isFinished) {
-    let objetoAptitud = {}
+    let objetoAptitud = {};
     aptitudes.forEach((aptitud) => {
-        if (aptitud.name === state.aptitudFinal) {
-            objetoAptitud = aptitud;
-        }
-    })
+      if (aptitud.name === state.aptitudFinal) {
+        objetoAptitud = aptitud;
+      }
+    });
 
     return (
       <>
-      <Navbar/>
-      <main className="kuder-test">
-        <div className="container">
-          <div className="titulo-resultado">
-            <h1>Resultados</h1>
-          </div>
-          <div className="resultado">
-            <h1>Su aptitud es {objetoAptitud.realName}</h1>
-          </div>
-            <div className="descripcion-resultado">
+        <Navbar />
+        <main className="kuder__test">
+          <div className="container">
+            <div className="learning__test--result">
+              <div className="titulo-resultado">
+                <h1>Resultados</h1>
+              </div>
+              <div className="resultado">
+                <h1>Su aptitud es {objetoAptitud.realName}</h1>
+              </div>
+              <div className="descripcion-resultado">
                 {objetoAptitud.value.map((value, index) => {
-                    return <p key={index}>{value}</p>
+                  return <p key={index}>{value}</p>;
                 })}
+              </div>
+              <div>
+                <button 
+                  onClick={() => registerAptitude(state.aptitudFinal)}
+                  className="boton-reiniciar">
+                  Registrar
+                </button>
+              </div>
             </div>
-          <div className="boton-reiniciar">
-            <button onClick={() => registerAptitude(state.aptitudFinal)}>
-              Registrar
-            </button>
-            
           </div>
-        </div>
-      </main>
+        </main>
       </>
     );
   }
 
   return (
     <>
-    <Navbar/>
-      <main className="kuder-test">
+      <Navbar />
+      <main className="kuder__test">
         <div className="container">
-          <div className="numero-pregunta">
-            <h1>
-              Pregunta {state.preguntaActual + 1} de {respuestas.length}
-            </h1>
-          </div>
-          <div className="titulo-pregunta">
-            <h1>¿Qué prefieres?</h1>
-          </div>
-          <div className="respuesta">
-            {respuestas[state.preguntaActual].map((answer, index) => {
-              return (
-                <button
-                  className="boton-respuesta"
-                  onClick={() => handleAnswerClick(answer.valor)}
-                  key={index}
-                >
-                  {answer.texto}
-                </button>
-              );
-            })}
+          <div className="learning__test--question">
+              <h1 className="numero-pregunta">
+                Pregunta {state.preguntaActual + 1} de {respuestas.length}
+              </h1>
+            <div className="titulo-pregunta">
+              <h1>¿Qué prefieres?</h1>
+            </div>
+            <div className="respuesta">
+              {respuestas[state.preguntaActual].map((answer, index) => {
+                return (
+                  <button
+                    className="boton-respuesta"
+                    onClick={() => handleAnswerClick(answer.valor)}
+                    key={index}
+                  >
+                    {answer.texto}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </main>
     </>
   );
-};
+}

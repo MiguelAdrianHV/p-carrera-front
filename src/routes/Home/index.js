@@ -1,6 +1,7 @@
 import { lazy } from "react";
 const HomeScreen = lazy(() => import("views/Home/HomeScreen"));
 const KuderTestScreen = lazy(() => import("views/Home/KuderTest"));
+const LearningTestScreen = lazy(() => import("views/Home/LearningTest"));
 const LoginScreen = lazy(() => import("views/Home/Login"));
 const RegisterScreen = lazy(() => import("views/Home/Register"));
 export const homeRoutes = [
@@ -28,6 +29,13 @@ export const homeRoutes = [
   {
     path: "/kuder",
     component: KuderTestScreen,
+    exact: true,
+    isPrivate: true,
+    accessWithoutLogin: false,
+  },
+  {
+    path: "/learning",
+    component: LearningTestScreen,
     exact: true,
     isPrivate: true,
     accessWithoutLogin: false,
