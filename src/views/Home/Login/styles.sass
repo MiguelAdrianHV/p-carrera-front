@@ -53,6 +53,20 @@
     width: 50%
     form
         width: 40%
+a
+    text-decoration: none
+    color: #000000
+    &:hover
+        text-decoration: underline
+        cursor: pointer
+    &:active
+        text-decoration: underline
+    &:focus
+        outline: none
+    &:disabled
+        opacity: 0.5
+        cursor: not-allowed
+
     
 @import "assets/sass/breakpoints.sass"
 .login__screen

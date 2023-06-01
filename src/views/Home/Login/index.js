@@ -77,12 +77,12 @@ export default function LoginScreen() {
             text={{
               es: (
                 <>
-                  ¿Aún no tienes una cuenta? <a href="/register">Regístrate</a>
+                  ¿Aún no tienes una cuenta? <a onClick={() => navigate("/register")}>Regístrate</a>
                 </>
               ),
               en: (
                 <>
-                  ¿Aún no tienes una cuenta? <a href="/register">Regístrate</a>
+                  ¿Aún no tienes una cuenta? <a onClick={() => navigate("/register")}>Regístrate</a>
                 </>
               ),
             }}
