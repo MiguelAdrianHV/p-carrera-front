@@ -21,7 +21,7 @@ export default function HomeScreen() {
       },
       dispatch: dispatch,
     });
-  }, [state.userTest.data?.tests]);
+  }, [state.userTest.data?.tests.kuder.result_pretty, state.userTest.data?.tests.learning.result_pretty]);
 
   return (
     <div>
