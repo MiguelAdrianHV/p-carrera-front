@@ -131,12 +131,12 @@ export default function RegisterScreen() {
             text={{
               es: (
                 <>
-                  ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>{" "}
+                  ¿Ya tienes una cuenta? <a onClick={() => navigate("/login")}>Inicia sesión</a>{" "}
                 </>
               ),
               en: (
                 <>
-                  ¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a>{" "}
+                  ¿Ya tienes una cuenta? <a onClick={() => navigate("/login")}>Inicia sesión</a>{" "}
                 </>
               ),
             }}
