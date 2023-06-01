@@ -1,8 +1,6 @@
 import React, { useRouter, createContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { reducer, actions, initialState } from "./reducer";
-import { Chat } from "components/Chat";
-import { SidebarChat } from "components/SidebarChat";
 import { Navbar } from "components/Navbar";
 import { petition } from "api";
 import "./styles.sass";

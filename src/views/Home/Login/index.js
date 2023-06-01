@@ -1,4 +1,4 @@
-import { Form, Input, Button } from "components";
+import { Form, Input } from "components";
 import React, { useReducer, useEffect } from "react";
 import { reducer, actions, initialState } from "./reducer";
 import { formValidator } from "utils";
